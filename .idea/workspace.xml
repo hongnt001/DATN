@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9984c6ff-18ee-49f9-86f3-b8902a2c9f44" name="Default Changelist" comment="" />
+    <list default="true" id="9984c6ff-18ee-49f9-86f3-b8902a2c9f44" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/assets/css/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/charts-bars.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/charts-lines.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/charts-pie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/focus-trap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/init-alpine.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/css/tailwind.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/css/tailwind.output.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/create-account-office-dark.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/create-account-office.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/dashboard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/forgot-password-office-dark.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/forgot-password-office.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/github.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/login-office-dark.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/login-office.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/twitter.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/charts-bars.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/charts-lines.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/charts-pie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/focus-trap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/init-alpine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blog.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +42,9 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -136,6 +169,20 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\DATN\resources\views\layout" />
+      <recent name="C:\xampp\htdocs\DATN\public\assets\js" />
+      <recent name="C:\xampp\htdocs\DATN\public\assets\css" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\DATN\resources\views" />
+      <recent name="C:\xampp\htdocs\DATN\resources\views\layout" />
+      <recent name="C:\xampp\htdocs\DATN\public\assets\js" />
+      <recent name="C:\xampp\htdocs\DATN\public\assset" />
+      <recent name="C:\xampp\htdocs\DATN\resources" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -153,6 +200,7 @@
         </serviceView>
       </list>
     </option>
+    <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -168,6 +216,12 @@
       <workItem from="1601364057685" duration="91000" />
       <workItem from="1602060529660" duration="8000" />
       <workItem from="1602060872294" duration="209000" />
+      <workItem from="1602061266301" duration="58000" />
+      <workItem from="1602061329837" duration="4744000" />
+      <workItem from="1602484589293" duration="14636000" />
+      <workItem from="1602514825532" duration="313000" />
+      <workItem from="1602515148105" duration="2369000" />
+      <workItem from="1602552683147" duration="5560000" />
     </task>
     <servers />
   </component>
@@ -175,9 +229,21 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1601364146464">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1602508338244">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601364146464" />
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602508338244" />
+    <state x="379" y="101" width="607" height="526" key="find.popup" timestamp="1602063695273">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="101" width="607" height="526" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1602063695273" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1602516042818">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1602516042818" />
+    <state x="346" y="49" key="search.everywhere.popup" timestamp="1602062253304">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1602062253304" />
   </component>
 </project>
