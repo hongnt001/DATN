@@ -29,7 +29,8 @@
         "release-it": "13.6.4",
         "resolve-url-loader": "^3.1.0",
         "tailwindcss": "^1.4.6",
-        "tailwindcss-multi-theme": "1.0.3"
+        "tailwindcss-multi-theme": "1.0.3",
+        "vue-template-compiler": "^2.6.12"
     },
     "name": "windmill-dashboard",
     "version": "1.0.2",

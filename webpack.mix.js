@@ -10,8 +10,12 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
-
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+mix.styles([
+    'resources/css/app.css',
+], 'public/assets/css/app.css');
+mix.js(['resources/js/init-alpine',
+    'resources/js/charts-bars.js',
+    'resources/js/charts-pie.js',
+    'resources/js/charts-lines.js',
+    'resources/js/focus-trap.js',
+], 'public/assets/js/app.js')

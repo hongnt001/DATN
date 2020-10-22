@@ -7,36 +7,36 @@
     @include('sidebar.header')
     <main class="h-full overflow-y-auto">
         <div class="container px-6 mx-auto grid">
-            <h2 class="my-4 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+            <h2 class="my-4 text-2xl font-semibold text-gray-700">
                 Quyết định kiểm kê
             </h2>
-            <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+            <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md">
                 <label class="block text-sm">
                     <span class="text-gray-800 text-xl">Thành viên hội đồng kiểm kê</span>
                 </label>
 
                 <div class="grid gap-6 mb-8 md:grid-cols-2">
-                    <div class="min-w-0 p-2 bg-white  dark:bg-gray-800">
+                    <div class="min-w-0 p-2 bg-white  ">
                         <label class="block mt-1 text-sm ">
-                <span class="text-gray-800 dark:text-gray-400">
+                <span class="text-gray-800 ">
                   Họ và tên
                 </span>
                             <select
-                                class="rounded-lg shadow-xs p-2 block w-full my-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                class="rounded-lg shadow-xs p-2 block w-full my-1 text-sm form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple">
                                 <option>Nguyễn Hoàng Dương</option>
                                 <option>Nguyễn Hoàng A</option>
                                 <option>Nguyễn Hoàng B</option>
                                 <option>Nguyễn Hoàng C</option>
                             </select>
                             <select
-                                class="rounded-lg shadow-xs p-2 block w-full my-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                class="rounded-lg shadow-xs p-2 block w-full my-1 text-sm form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple">
                                 <option>Nguyễn Hoàng A</option>
                                 <option>Nguyễn Hoàng A</option>
                                 <option>Nguyễn Hoàng B</option>
                                 <option>Nguyễn Hoàng C</option>
                             </select>
                             <select
-                                class="rounded-lg shadow-xs p-2 block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                class="rounded-lg shadow-xs p-2 block w-full mt-1 text-sm form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple ">
                                 <option>Nguyễn Hoàng B</option>
                                 <option>Nguyễn Hoàng A</option>
                                 <option>Nguyễn Hoàng B</option>
@@ -45,23 +45,23 @@
                         </label>
                     </div>
 
-                    <div class="min-w-0 p-2 bg-white dark:bg-gray-800">
+                    <div class="min-w-0 p-2 bg-white ">
                         <label class="block mt-1 text-sm ">
-                <span class="text-gray-700 dark:text-gray-400">
+                <span class="text-gray-700 ">
                   Đại diện
                 </span>
                             <select
-                                class="rounded-lg shadow-xs p-2 block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                class="rounded-lg shadow-xs p-2 block w-full mt-1 text-sm form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple">
                                 <option>Trưởng ban</option>
                                 <option>Ủy viên</option>
                             </select>
                             <select
-                                class="rounded-lg shadow-xs p-2 block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                class="rounded-lg shadow-xs p-2 block w-full mt-1 text-sm form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple">
                                 <option>Ủy viên</option>
                                 <option>Trưởng ban</option>
                             </select>
                             <select
-                                class="rounded-lg shadow-xs p-2 block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                class="rounded-lg shadow-xs p-2 block w-full mt-1 text-sm form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple">
                                 <option>Ủy viên</option>
                                 <option>Trưởng ban</option>
 
@@ -70,16 +70,16 @@
                     </div>
                 </div>
                 <label class="block mt-4 text-sm">
-                    <span class="text-gray-700 dark:text-gray-400">Ngày kiểm kê</span>
+                    <span class="text-gray-700 ">Ngày kiểm kê</span>
                     <textarea
-                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-textarea focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                        class="block w-full mt-1 text-sm form-textarea focus:border-purple-400 focus:outline-none focus:shadow-outline-purple"
                         rows="3" placeholder="10/10/2020"></textarea>
                 </label>
 
                 <label class="block mt-0 text-sm">
-                    <span class="text-gray-700 dark:text-gray-400">Ghi chú</span>
+                    <span class="text-gray-700 ">Ghi chú</span>
                     <textarea
-                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-textarea focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                        class="block w-full mt-1 text-sm form-textarea focus:border-purple-400 focus:outline-none focus:shadow-outline-purple"
                         rows="3" placeholder="Note"></textarea>
                 </label>
                 <div class="px-6 my-6">
@@ -91,10 +91,11 @@
                     </button>
                 </div>
             </div>
+            
 
         </div>
         <div class="container px-6 mx-auto grid">
-            <h2 class="my-4 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+            <h2 class="my-4 text-2xl font-semibold text-gray-700 ">
                 Danh sách quyết định kiểm kê
             </h2>
 
@@ -105,7 +106,7 @@
                 <table class="w-full whitespace-no-wrap">
                     <thead>
                     <tr
-                        class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+                        class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b bg-gray-50"
                     >
                         <th class="px-4 py-3">Người quyết định</th>
                         <th class="px-4 py-3">Ngày</th>
@@ -113,9 +114,9 @@
                     </tr>
                     </thead>
                     <tbody
-                        class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                        class="bg-white divide-y"
                     >
-                    <tr class="text-gray-700 dark:text-gray-400">
+                    <tr class="text-gray-700">
                         <td class="px-4 py-3">
                             <div class="flex items-center text-sm">
                                 <!-- Avatar with inset shadow -->
@@ -135,7 +136,7 @@
                                 </div>
                                 <div>
                                     <p class="font-semibold">Hans Burger</p>
-                                    <p class="text-xs text-gray-600 dark:text-gray-400">
+                                    <p class="text-xs text-gray-600">
                                         10x Developer
                                     </p>
                                 </div>
@@ -153,7 +154,7 @@
                             </button>
                         </td>
                     </tr>
-                    <tr class="text-gray-700 dark:text-gray-400">
+                    <tr class="text-gray-700">
                         <td class="px-4 py-3">
                             <div class="flex items-center text-sm">
                                 <!-- Avatar with inset shadow -->
@@ -173,7 +174,7 @@
                                 </div>
                                 <div>
                                     <p class="font-semibold">Hans Burger</p>
-                                    <p class="text-xs text-gray-600 dark:text-gray-400">
+                                    <p class="text-xs text-gray-600">
                                         10x Developer
                                     </p>
                                 </div>
@@ -191,7 +192,7 @@
                             </button>
                         </td>
                     </tr>
-                    <tr class="text-gray-700 dark:text-gray-400">
+                    <tr class="text-gray-700 ">
                         <td class="px-4 py-3">
                             <div class="flex items-center text-sm">
                                 <!-- Avatar with inset shadow -->
@@ -211,7 +212,7 @@
                                 </div>
                                 <div>
                                     <p class="font-semibold">Hans Burger</p>
-                                    <p class="text-xs text-gray-600 dark:text-gray-400">
+                                    <p class="text-xs text-gray-600 ">
                                         10x Developer
                                     </p>
                                 </div>
@@ -234,7 +235,7 @@
                 </table>
             </div>
             <div
-                class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800"
+                class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t bg-gray-50 sm:grid-cols-9"
             >
                 <span class="flex items-center col-span-3">
                   Showing 21-30 of 100

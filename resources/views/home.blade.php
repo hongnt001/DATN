@@ -2,8 +2,8 @@
 @section('map')
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAowly3iT7ilrF0--nM-HcUDnOT4XubRh0&&callback=initMap&libraries=&v=weekly"
-        defer
+{{--        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAowly3iT7ilrF0--nM-HcUDnOT4XubRh0&&callback=initMap&libraries=&v=weekly"--}}
+{{--        defer--}}
     ></script>
     <style type="text/css">
         #map {
@@ -32,10 +32,10 @@
     <main class="h-full overflow-y-auto">
         <div id="map" ></div>
         <div class="container px-6 mx-auto grid">
-            <h2 class="my-4 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+            <h2 class="my-4 text-2xl font-semibold text-gray-700 ">
                 Danh sách thiết bị
             </h2>
-            <div class="px-6 my-6 flex">
+            <div class="px-6 my-6 flex button">
                 <button
                     class="mr-4 flex items-center justify-between w-auto px-4 py-2 text-sm font-medium leading-5 text-gray-800 transition-colors duration-150 bg-gray-100 border border-transparent rounded-lg active:bg-gray-100 hover:bg-gray-100 focus:outline-none "
                 >
@@ -110,7 +110,7 @@
                     <table class="w-full whitespace-no-wrap">
                         <thead>
                         <tr
-                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b  bg-gray-50"
                         >
                             <th class="px-4 py-3">Tên thiết bị</th>
                             <th class="px-4 py-3">Model</th>
@@ -119,16 +119,16 @@
                         </tr>
                         </thead>
                         <tbody
-                            class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                            class="bg-white divide-y "
                         >
-                        <tr class="text-gray-700 dark:text-gray-400">
+                        <tr class="text-gray-700">
 
                         </tr>
                         </tbody>
                     </table>
                 </div>
                 <div
-                    class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800"
+                    class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t  bg-gray-50 sm:grid-cols-9"
                 >
                 <span class="flex items-center col-span-3">
                   Showing 21-30 of 100

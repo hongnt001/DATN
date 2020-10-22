@@ -2,35 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9984c6ff-18ee-49f9-86f3-b8902a2c9f44" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/css/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/charts-bars.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/charts-lines.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/charts-pie.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/focus-trap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/init-alpine.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/css/tailwind.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/css/tailwind.output.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/create-account-office-dark.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/create-account-office.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/dashboard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/forgot-password-office-dark.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/forgot-password-office.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/github.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/login-office-dark.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/login-office.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/twitter.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/charts-bars.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/charts-lines.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/charts-pie.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/focus-trap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/init-alpine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blog.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/define.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/decision.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/decision.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sidebar/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sidebar/menu.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,6 +144,11 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
       <path value="$PROJECT_DIR$/vendor/filp/whoops" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/hanneskod/classtools" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-eventmanager" />
+      <path value="$PROJECT_DIR$/vendor/bensampo/laravel-enum" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ho2QzAjIMHFcOzRAzF93HulLTG" />
@@ -166,7 +160,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gldoc-main-1" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -176,11 +170,11 @@
       <recent name="C:\xampp\htdocs\DATN\public\assets\css" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\DATN\resources\views\user" />
+      <recent name="C:\xampp\htdocs\DATN\resources\views\Auth" />
       <recent name="C:\xampp\htdocs\DATN\resources\views" />
       <recent name="C:\xampp\htdocs\DATN\resources\views\layout" />
       <recent name="C:\xampp\htdocs\DATN\public\assets\js" />
-      <recent name="C:\xampp\htdocs\DATN\public\assset" />
-      <recent name="C:\xampp\htdocs\DATN\resources" />
     </key>
   </component>
   <component name="RunManager">
@@ -221,7 +215,12 @@
       <workItem from="1602484589293" duration="14636000" />
       <workItem from="1602514825532" duration="313000" />
       <workItem from="1602515148105" duration="2369000" />
-      <workItem from="1602552683147" duration="5560000" />
+      <workItem from="1602552683147" duration="5893000" />
+      <workItem from="1602580976095" duration="2536000" />
+      <workItem from="1603158723594" duration="4156000" />
+      <workItem from="1603252304591" duration="5039000" />
+      <workItem from="1603263019548" duration="10052000" />
+      <workItem from="1603329869517" duration="16380000" />
     </task>
     <servers />
   </component>
@@ -229,14 +228,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1602508338244">
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603263621559">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602508338244" />
-    <state x="379" y="101" width="607" height="526" key="find.popup" timestamp="1602063695273">
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1603263621559" />
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1603357920387">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="101" width="607" height="526" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1602063695273" />
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1603357920387" />
+    <state x="379" y="101" width="607" height="526" key="find.popup" timestamp="1603271199786">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="101" width="607" height="526" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1603271199786" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1602516042818">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
