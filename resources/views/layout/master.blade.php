@@ -4,8 +4,6 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Kiểm kê - @yield('title')</title>
-    @section('map')
-        @show
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}"/>
     <script
         src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
@@ -39,6 +37,7 @@
     </div>
 </div>
 
+ @stack('js')
 
 </body>
 </html>

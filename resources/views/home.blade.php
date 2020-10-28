@@ -1,27 +1,4 @@
 @extends('layout.master')
-@section('map')
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script
-{{--        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAowly3iT7ilrF0--nM-HcUDnOT4XubRh0&&callback=initMap&libraries=&v=weekly"--}}
-{{--        defer--}}
-    ></script>
-    <style type="text/css">
-        #map {
-            height: 80%;
-        }
-    </style>
-    <script>
-        let map;
-
-        function initMap() {
-            map = new google.maps.Map(document.getElementById("map"), {
-                center: { lat: 21.006145, lng: 105.843114 } ,
-                zoom: 15,
-            });
-        }
-    </script>
-    @stop
-
 @section('title', 'Thống kê thiết bị')
 @section('sidebar')
     @include('sidebar.menu')
@@ -30,7 +7,7 @@
     @include('sidebar.header')
 
     <main class="h-full overflow-y-auto">
-        <div id="map" ></div>
+        <div id="map"> </div>
         <div class="container px-6 mx-auto grid">
             <h2 class="my-4 text-2xl font-semibold text-gray-700 ">
                 Danh sách thiết bị
@@ -96,12 +73,12 @@
 </svg>
                     </span>
                 </button>
-                <button
+                <a href="{{route('add_device')}}"
                     class="ml-16 flex items-center justify-between w-auto px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
                 >
                     Thêm mới
                     <span class="ml-2" aria-hidden="true">+</span>
-                </button>
+                </a>
 
             </div>
             <!-- New Table -->
@@ -110,10 +87,11 @@
                     <table class="w-full whitespace-no-wrap">
                         <thead>
                         <tr
-                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b  bg-gray-50"
+                            class="text-xs font-bold tracking-wide text-left text-gray-800 uppercase border-b  bg-gray-200"
                         >
                             <th class="px-4 py-3">Tên thiết bị</th>
                             <th class="px-4 py-3">Model</th>
+                            <th class="px-4 py-3">Nhãn hiệu</th>
                             <th class="px-4 py-3">Trạng thái</th>
                             <th class="px-4 py-3">Ngày cập nhật</th>
                         </tr>
@@ -121,110 +99,68 @@
                         <tbody
                             class="bg-white divide-y "
                         >
-                        <tr class="text-gray-700">
-
-                        </tr>
+                        @foreach($devices as $device)
+                            <tr class="text-gray-700">
+                                <td class="px-4 py-3 text-sm">
+                                    <div>
+                                        <p class="font-semibold">{{$device->name}}</p>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 text-sm">{{$device->model_number}}</td>
+                                <td class="px-4 py-3 text-sm">{{$device->brand_name}}</td>
+                                <td class="px-4 py-3 text-sm">{{$device->status}}</td>
+                                <td class="px-4 py-3 text-sm">{{$device->updated_at}}</td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
-                <div
-                    class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t  bg-gray-50 sm:grid-cols-9"
-                >
-                <span class="flex items-center col-span-3">
-                  Showing 21-30 of 100
+                <div class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t  bg-gray-50 sm:grid-cols-9">
+                <span class="flex justify-end item-center col-span-9 ">
+                  {{ $devices->links() }}
                 </span>
-                    <span class="col-span-2"></span>
-                    <!-- Pagination -->
-                    <span class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
-                  <nav aria-label="Table navigation">
-                    <ul class="inline-flex items-center">
-                      <li>
-                        <button
-                            class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple"
-                            aria-label="Previous"
-                        >
-                          <svg
-                              aria-hidden="true"
-                              class="w-4 h-4 fill-current"
-                              viewBox="0 0 20 20"
-                          >
-                            <path
-                                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                                clip-rule="evenodd"
-                                fill-rule="evenodd"
-                            ></path>
-                          </svg>
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                            class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple"
-                        >
-                          1
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                            class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple"
-                        >
-                          2
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                            class="px-3 py-1 text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600 rounded-md focus:outline-none focus:shadow-outline-purple"
-                        >
-                          3
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                            class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple"
-                        >
-                          4
-                        </button>
-                      </li>
-                      <li>
-                        <span class="px-3 py-1">...</span>
-                      </li>
-                      <li>
-                        <button
-                            class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple"
-                        >
-                          8
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                            class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple"
-                        >
-                          9
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                            class="px-3 py-1 rounded-md rounded-r-lg focus:outline-none focus:shadow-outline-purple"
-                            aria-label="Next"
-                        >
-                          <svg
-                              class="w-4 h-4 fill-current"
-                              aria-hidden="true"
-                              viewBox="0 0 20 20"
-                          >
-                            <path
-                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                clip-rule="evenodd"
-                                fill-rule="evenodd"
-                            ></path>
-                          </svg>
-                        </button>
-                      </li>
-                    </ul>
-                  </nav>
-                </span>
+
                 </div>
             </div>
         </div>
     </main>
 @stop
+@push('js')
+    <script src="{{ asset('assets/js/mapcir/js/mapcir.js') }}"></script>
+    <style type="text/css">
+        #map {
+            height: 80%;
+        }
+    </style>
+    <script>
+        // map init
+        const center = new google.maps.LatLng(21.006145, 105.843114);
+
+        let map = new google.maps.Map(document.getElementById('map'), {
+            center: center,
+            zoom: 15
+        });
+
+        // load map tiles
+        const TILE_URL = 'http://maptile.mapcir.com/lyrs=p&x={x}&y={y}&z={z}';
+        const TILE_SIZE = 256;
+        const TILE_LAYER_ID = 'layer_tiles';
+        let layerTiles = new google.maps.ImageMapType({
+            name: TILE_LAYER_ID,
+            getTileUrl: function(coord, zoom) {
+                const url = TILE_URL
+                    .replace('{x}', coord.x)
+                    .replace('{y}', coord.y)
+                    .replace('{z}', zoom);
+                return url;
+            },
+            tileSize: new google.maps.Size(TILE_SIZE, TILE_SIZE),
+            minZoom: 1,
+            maxZoom: 21
+        });
+
+        map.mapTypes.set(TILE_LAYER_ID, layerTiles);
+        map.setMapTypeId(TILE_LAYER_ID);
+    </script>
+@endpush
 

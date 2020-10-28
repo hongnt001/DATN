@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use App\Models\Devices;
+
 
 class UserController extends Controller
 {
@@ -35,6 +37,7 @@ class UserController extends Controller
     }
 
     public function editInfor(){
+
 
     }
 

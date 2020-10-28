@@ -14,43 +14,49 @@ use Illuminate\Routing\Controller;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/login', function () {
-    return view('Auth/login');
-});
-Route::get('/user/create', 'App\Http\Controllers\UserController@showRegistrationForm')->name('add_user');
-Route::post('/user/create', 'App\Http\Controllers\UserController@create')->name('create_user');
-Route::get('/user/list',
-    [
-        'uses' => 'App\Http\Controllers\UserController@getList']
-)->name('list_user');
 
-Route::get('/forgot-password', function () {
-    return view('Auth/forgot-pass');
+Route::get('/login', [ 'uses' => 'App\Http\Controllers\LoginController@getLogin'])->name('getLogin');
+Route::post('/login', [ 'uses' => 'App\Http\Controllers\LoginController@postLogin'])->name('postLogin');
+Route::get('/forgot-password',[ 'uses' => 'App\Http\Controllers\LoginController@forgotPassword'])->name('forgot');
+
+Route::get('/logout', [ 'uses' => 'App\Http\Controllers\LoginController@getLogout'])->name('logout');
+
+
+Route::group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers'], function() {
+    Route::get('/home',  [ 'uses' => 'HomeController@getListDevices'])->name('home');
+
+    Route::get('/user/create', 'UserController@showRegistrationForm')->name('add_user');
+    Route::post('/user/create', 'UserController@create')->name('create_user');
+    Route::get('/user/list', [ 'uses' => 'UserController@getList'])->name('list_user');
+
+    Route::get('/device/create', 'DeviceController@showForm')->name('add_device');
+    Route::post('/device/create', 'DeviceController@create')->name('create_device');
+
+
+    Route::get('/inventory/create', 'InventoryController@showFormCreatGroup')->name('form_group_inven');
+    Route::post('/inventory/create', 'InventoryController@createGroup')->name('create_group');
+
+
+
+    Route::get('/inventory', function () {
+        return view('inventory');
+    })->name('inventory');
+    Route::get('/rate', function () {
+        return view('rate');
+    })->name('rate');
+    Route::get('/plan', function () {
+        return view('plan');
+    })->name('plan');
+    Route::get('/report', function () {
+        return view('report');
+    })->name('report');
+    Route::get('/listuser', function () {
+        return view('listuser');
+    })->name('listuser');
+    Route::get('/createuser', function () {
+        return view('createuser');
+    })->name('createuser');
 });
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
-Route::get('/decision', function () {
-    return view('decision');
-})->name('decision');
-Route::get('/inventory', function () {
-    return view('inventory');
-})->name('inventory');
-Route::get('/rate', function () {
-    return view('rate');
-})->name('rate');
-Route::get('/plan', function () {
-    return view('plan');
-})->name('plan');
-Route::get('/report', function () {
-    return view('report');
-})->name('report');
-Route::get('/listuser', function () {
-    return view('listuser');
-})->name('listuser');
-Route::get('/createuser', function () {
-    return view('createuser');
-})->name('createuser');
+
+
+

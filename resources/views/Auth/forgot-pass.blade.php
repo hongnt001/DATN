@@ -16,7 +16,7 @@
                 <label class="block text-sm">
                     <span class="text-gray-900">Email</span>
                     <input
-                        class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                        class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple p-2 border border-gray-200 rounded form-input"
                         placeholder="admin@admin.com"
                         type="email" required
                     />
