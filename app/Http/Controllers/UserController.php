@@ -13,11 +13,11 @@ class UserController extends Controller
 {
     public function getList(){
         $users = User::all();
-        return view('user/list-user', ['users' => $users]);
+        return view('user/list-user', ['users' => $users,'active' => 'listuser']);
     }
     public function showRegistrationForm()
     {
-        return view('user/create-user');
+        return view('user/create-user',['active' => 'adduser'] );
     }
     public function create(Request $request){
         $this->validator($request->all())->validate();

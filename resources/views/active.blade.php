@@ -7,72 +7,18 @@
     @include('sidebar.header')
 
     <main class="h-full overflow-y-auto">
-{{--        <div id="map"> </div>--}}
+        <div id="map"> </div>
         <div class="container px-6 mx-auto grid">
             <h2 class="my-4 text-2xl font-semibold text-gray-700 ">
-                Danh sách thiết bị
+                Kiểm kê
             </h2>
             <div class="px-6 my-6 flex button">
-                <button
-                    class="mr-4 flex items-center justify-between w-auto px-4 py-2 text-sm font-medium leading-5 text-gray-800 transition-colors duration-150 bg-gray-100 border border-transparent rounded-lg active:bg-gray-100 hover:bg-gray-100 focus:outline-none "
-                >
-                    Danh mục
-                    <span class="ml-2" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-</svg>
-                    </span>
-                </button>
-                <button
-                    class="mr-4 flex items-center justify-between w-auto px-4 py-2 text-sm font-medium leading-5 text-gray-800 transition-colors duration-150 bg-gray-100 border border-transparent rounded-lg active:bg-gray-100 hover:bg-gray-100 focus:outline-none "
-                >
-                    NSX
-                    <span class="ml-2" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-</svg>
-                    </span>
-                </button>
-                <button
-                    class=" mr-4 flex items-center justify-between w-auto px-4 py-2 text-sm font-medium leading-5 text-gray-800 transition-colors duration-150 bg-gray-100 border border-transparent rounded-lg active:bg-gray-100 hover:bg-gray-100 focus:outline-none "
-                >
-                    Phân loại
-                    <span class="ml-2" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-</svg>
-                    </span>
-                </button>
-                <button
-                    class=" mr-4 flex items-center justify-between w-auto px-4 py-2 text-sm font-medium leading-5 text-gray-800 transition-colors duration-150 bg-gray-100 border border-transparent rounded-lg active:bg-gray-100 hover:bg-gray-100 focus:outline-none "
-                >
-                    Năm sử dụng
-                    <span class="ml-2" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-</svg>
-                    </span>
-                </button>
-                <button
-                    class=" mr-4 flex items-center justify-between w-auto px-4 py-2 text-sm font-medium leading-5 text-gray-800 transition-colors duration-150 bg-gray-100 border border-transparent rounded-lg active:bg-gray-100 hover:bg-gray-100 focus:outline-none "
-                >
-                    Địa điểm
-                    <span class="ml-2" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-</svg>
-                    </span>
-                </button>
-                <button
-                    class="mr-4 flex items-center justify-between w-auto px-4 py-2 text-sm font-medium leading-5 text-gray-800 transition-colors duration-150 bg-gray-100 border border-transparent rounded-lg active:bg-gray-100 hover:bg-gray-100 focus:outline-none "
-                >
-                    Trạng thái
-                    <span class="ml-2" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-</svg>
-                    </span>
-                </button>
+                <p>Thời gian:  {{$inventory->date_inventory}} - {{$inventory->time_inventory}} </p>
+                <p>Địa điểm:
+                @foreach($inventory->locate as $locate)
+                    <p>{{$locate}}</p>
+                    @endforeach</p>
+
                 <a href="{{route('add_device')}}"
                     class="ml-16 flex items-center justify-between w-auto px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
                 >

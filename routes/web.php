@@ -37,6 +37,13 @@ Route::group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers'], fu
     Route::post('/inventory/create', 'InventoryController@createGroup')->name('create_group');
 
 
+    Route::get('/inventory/list', 'InventoryController@getList')->name('get_list_inven');
+    Route::get('/inventory/active/{id_inventory}', 'InventoryController@invenActive')->name('active');
+
+
+
+
+
 
     Route::get('/inventory', function () {
         return view('inventory');

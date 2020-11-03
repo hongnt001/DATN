@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Inventory_group extends Model
 {
     use HasFactory;
+    protected $table = 'group_inventory';
+
+    public function user()
+    {
+        return $this->hasOne('App\Models\User', 'id', 'id_user');
+    }
 }

@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function getListDevices(){
         $devices = Devices::paginate(3);
-        return view('home',['devices'=> $devices]);
+        return view('home',['devices'=> $devices, 'active' =>'home']);
     }
 
 

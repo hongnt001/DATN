@@ -58,9 +58,9 @@ class DeviceController extends Controller
             $device->locate_id = '1';
             $device->image = $request->hasFile('image_device')?'uploads/logos/'. $filename:'';
 
-            $device->save();
+            $saved = $device->save();
 
-            if($device->save()){
+            if($saved){
                 $acc = new Accounting();
 
                 $acc->id_device = $device->id;
@@ -68,9 +68,9 @@ class DeviceController extends Controller
                 $acc->original_price = $device->original_price;
                 $acc->present_price = $device->present_price;
 
-                $acc->save();
+                $saved_1 = $acc->save();
 
-                if($acc->save()){
+                if($saved_1){
                     return redirect('/home');
                 } else {
                     return Redirect::back()->withErrors(['msg', 'Thêm mới không thành công! Thử lại']);

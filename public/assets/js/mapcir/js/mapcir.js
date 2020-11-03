@@ -8,14 +8,15 @@ google.maps = google.maps || {};
   var localLibs = [
     'common', 'map', 'util', 'data',
     'marker', 'infowindow',
-    'poly', 'geometry', 'directions'
+    'poly', 'geometry', 'directions',
+      'overlay'
   ];
 
   var modules = google.maps.modules = {};
   google.maps.__gjsload__ = function(name, text) {
     modules[name] = text;
   };
-  
+
   google.maps.Load = function(apiLoad) {
     delete google.maps.Load;
     apiLoad([], loadScriptTime);
@@ -23,6 +24,7 @@ google.maps = google.maps || {};
   var loadScriptTime = (new Date).getTime();
 
   google.maps.loadLib = function(src) {
+      // console.log('lib ->', 'https://maps.googleapis.com/maps-api-v3/api/js/42/6/'+src);
     var m = src.match(/(\/?)([a-zZ-Z0-9\-\_\.]+)\.js$/is);
 
     if (m === null) {
@@ -206,7 +208,7 @@ var q=this.controls=[];
 _.ae(_.Bh,function(r,u){q[u]=new _.og});
 _.K("map").then(function(r){aj=r;c.getDiv()&&f&&r.j(c,e,f,k,g,m)});
 this.data=new ah({map:this});
-  
+
   if (b.tileUrl !== undefined) {
     var tlid = 'default_layer_tiles';
     let layerTiles = new google.maps.ImageMapType({
@@ -222,7 +224,7 @@ this.data=new ah({map:this});
       minZoom: 1,
       maxZoom: 21
     });
-    
+
     this.mapTypes.set(tlid, layerTiles);
     this.setMapTypeId(tlid);
   }
