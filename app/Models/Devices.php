@@ -9,9 +9,10 @@ class Devices extends Model
 {
     use HasFactory;
     protected $table = 'devices';
-//    protected $fillable = [
-//        'name',
-//        'normalized',
-//    ];
+    public function accounting()
+    {
+        return $this->hasOne('App\Models\Accounting',  'id_device','id');
+    }
+
 
 }

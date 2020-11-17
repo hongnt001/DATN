@@ -22,7 +22,7 @@
 
             </div>
             <!-- New Table -->
-            <div class="w-full overflow-hidden rounded-lg shadow-xs">
+            <div class="w-full mb-6 overflow-hidden rounded-lg shadow-xs">
                 <div class="w-full overflow-x-auto">
                     <table class="w-full whitespace-no-wrap">
                         <thead>
@@ -69,6 +69,7 @@
                 </div>
             </div>
         </div>
+        @include('sidebar.footer')
     </main>
 @stop
 

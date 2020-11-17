@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Models\Category;
 use App\Models\Devices;
+use App\Models\Venue;
 use App\Models\Accounting;
 use Illuminate\Support\Facades\Redirect;
 
@@ -20,6 +22,7 @@ class DeviceController extends Controller
         return view('create-device', [
             'categories'=> $categories,
             'status'=> $status,
+            'active' =>'home'
         ]);
     }
     public function create(Request $request){
@@ -78,6 +81,31 @@ class DeviceController extends Controller
             } else {
                 return Redirect::back()->withErrors(['msg', 'Thêm mới không thành công! Thử lại']);
             }
+    }
+
+    public function schedule(){
+        $device_lose = Devices::where('status','=','Mất')->get();
+        foreach($device_lose as $k => &$v) {
+            $v->locate = Venue::where('id',$v->locate_id)->first()->name;
+//            $v->updated_at = Carbon::createFromFormat('Y-m-d H:i:s',$v->updated_at)->format('d/m/Y');
+        }
+
+        $device_fix = Devices::where('status','=','Cần sửa chữa')->get();
+        foreach($device_fix as $k => &$v) {
+            $v->locate = Venue::where('id',$v->locate_id)->first()->name;
+        }
+
+        $device_tt = Devices::where('status','=','Cần thay thế')->get();
+        foreach($device_tt as $k => &$v) {
+            $v->locate = Venue::where('id',$v->locate_id)->first()->name;
+        }
+
+        return view('schedule', [
+            'device_lose'=> $device_lose,
+            'device_fix'=> $device_fix,
+            'device_tt'=> $device_tt,
+            'active' =>'schedule'
+        ]);
 
     }
 }

@@ -297,6 +297,7 @@
                 </form>
             </div>
         </div>
+        @include('sidebar.footer')
     </main>
 
 @stop

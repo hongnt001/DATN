@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Location extends Model
 {
     use HasFactory;
-    protected $table = 'device_categories';
+    protected $table = 'locations';
 }

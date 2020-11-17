@@ -1,6 +1,16 @@
 <!-- Desktop sidebar -->
 <aside
     class="z-20 hidden w-64 overflow-y-auto bg-gray-800 md:block flex-shrink-0"
+    class="fixed inset-y-0 z-20 flex-shrink-0 w-64 mt-16 overflow-y-auto bg-gray-800 "
+    x-show="isSideMenuOpen"
+    x-transition:enter="transition ease-in-out duration-150"
+    x-transition:enter-start="opacity-0 transform -translate-x-20"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition ease-in-out duration-150"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0 transform -translate-x-20"
+    @click.away="closeSideMenu"
+    @keydown.escape="closeSideMenu"
 >
     <div class="py-4 text-gray-500 ">
         <p class="ml-6 text-lg font-bold text-gray-200">
@@ -93,9 +103,15 @@
                 </a>
             </li>
             <li class="relative px-6 py-3">
+                @if($active == 'rate')
+                    <span
+                        class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                        aria-hidden="true"
+                    ></span>
+                @endif
                 <a
-                    class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-100"
-                    href="{{route('rate')}}"
+                    class=" @if($active == 'rate') text-gray-100  @endif inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-100"
+                    href="{{route('list_inven')}}"
                 >
                     <svg
                         class="w-5 h-5"
@@ -116,9 +132,15 @@
                 </a>
             </li>
             <li class="relative px-6 py-3">
+                @if($active == 'schedule')
+                    <span
+                        class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                        aria-hidden="true"
+                    ></span>
+                @endif
                 <a
-                    class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-100"
-                    href="buttons.html"
+                    class=" @if($active == 'schedule') text-gray-100  @endif inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-100"
+                    href="{{route('schedule')}}"
                 >
                     <svg
                         class="w-5 h-5"
@@ -134,29 +156,7 @@
                             d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
                         ></path>
                     </svg>
-                    <span class="ml-4">Kế hoạch nâng cấp</span>
-                </a>
-            </li>
-            <li class="relative px-6 py-3">
-                <a
-                    class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-100"
-                    href="modals.html"
-                >
-                    <svg
-                        class="w-5 h-5"
-                        aria-hidden="true"
-                        fill="none"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path
-                            d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                        </path>
-                    </svg>
-                    <span class="ml-4">Báo cáo</span>
+                    <span class="ml-4">Kế hoạch sửa chữa</span>
                 </a>
             </li>
             <li
@@ -224,16 +224,16 @@
 </aside>
 <!-- Mobile sidebar -->
 <!-- Backdrop -->
-{{--<div--}}
-{{--    x-show="isSideMenuOpen"--}}
-{{--    x-transition:enter="transition ease-in-out duration-150"--}}
-{{--    x-transition:enter-start="opacity-0"--}}
-{{--    x-transition:enter-end="opacity-100"--}}
-{{--    x-transition:leave="transition ease-in-out duration-150"--}}
-{{--    x-transition:leave-start="opacity-100"--}}
-{{--    x-transition:leave-end="opacity-0"--}}
-{{--    class="fixed inset-0 z-10 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center"--}}
-{{--></div>--}}
+<div
+    x-show="isSideMenuOpen"
+    x-transition:enter="transition ease-in-out duration-150"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition ease-in-out duration-150"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    class="fixed inset-0 z-10 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center"
+></div>
 <aside
     class="fixed inset-y-0 z-20 flex-shrink-0 w-64 mt-16 overflow-y-auto bg-gray-800 md:hidden"
     x-show="isSideMenuOpen"
@@ -325,7 +325,7 @@
             <li class="relative px-6 py-3">
                 <a
                     class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-100"
-                    href="{{route('rate')}}"
+                    href="{{route('list_inven')}}"
                 >
                     <svg
                         class="w-5 h-5"
@@ -348,7 +348,7 @@
             <li class="relative px-6 py-3">
                 <a
                     class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-100"
-                    href="buttons.html"
+                    href="{{route('schedule')}}"
                 >
                     <svg
                         class="w-5 h-5"
@@ -364,29 +364,7 @@
                             d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
                         ></path>
                     </svg>
-                    <span class="ml-4">Kế hoạch nâng cấp</span>
-                </a>
-            </li>
-            <li class="relative px-6 py-3">
-                <a
-                    class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-100"
-                    href="modals.html"
-                >
-                    <svg
-                        class="w-5 h-5"
-                        aria-hidden="true"
-                        fill="none"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path
-                            d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                        </path>
-                    </svg>
-                    <span class="ml-4">Báo cáo</span>
+                    <span class="ml-4">Kế hoạch sửa chữa</span>
                 </a>
             </li>
             <li class="relative pr-2 pl-6 py-3">
