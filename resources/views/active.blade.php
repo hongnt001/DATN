@@ -347,6 +347,55 @@
                 zoom: 19
             });
 
+            ////////////////////////////////////////////////////////////////////////////
+            {{--var cate =  {!! json_encode($cate) !!};--}}
+            {{--console.log(cate[1]['id']);--}}
+            // const iconBase = "https://developers.google.com/maps/documentation/javascript/examples/full/images/info-i_maps.png";
+            // var icons = {
+            //     2: {
+            //         icon: iconBase + "info-i_maps.png",
+            //     },
+            //     3: {
+            //         icon: iconBase + "info-i_maps.png",
+            //     },
+            //     6: {
+            //         icon: iconBase + "info-i_maps.png",
+            //     },
+            //     8: {
+            //         icon: iconBase + "info-i_maps.png",
+            //     },
+            // };
+            //
+            // const features = [
+            //     {
+            //         position: new google.maps.LatLng(38.448281716122, -122.74389149662),
+            //         type: "2",
+            //     },
+            //     {
+            //         position: new google.maps.LatLng(38.448324838679, -122.74372171472),
+            //         type: "2",
+            //     },
+            //     {
+            //         position: new google.maps.LatLng(38.44824790916539, -122.74380288337676),
+            //         type: "2",
+            //     },
+            //     {
+            //         position: new google.maps.LatLng(38.448288588558, -122.74369349126),
+            //         type: "2",
+            //     },
+            //
+            // ];
+            //
+            // // Create markers.
+            // for (let i = 0; i < features.length; i++) {
+            //     const marker = new google.maps.Marker({
+            //         position: features[i].position,
+            //         icon: icons[features[i].type].icon,
+            //         map: map,
+            //     });
+            // }
+
+
             // load map tiles
             const TILE_URL = 'http://maptile.mapcir.com/lyrs=p&x={x}&y={y}&z={z}';
             const TILE_SIZE = 256;
@@ -421,6 +470,33 @@
                     srcImage = "/uploads/floor_demo1.svg"
                 }
             }
+
+            var devices =  {!! json_encode($devices) !!};
+            for( var i=0; i<devices.length; i++) {
+                var device = devices[i];
+                drawPoi(device, map);
+
+            }
+
+            function drawPoi(poi, map) {
+                var zoom = map.getZoom();
+                var scale = 1128.497220 *  0.00067 * (21 > zoom ? zoom/21 : 21/zoom);
+
+                var circle = new google.maps.Circle({
+                    radius: 2*scale,
+                    center: new google.maps.LatLng(poi.latitude, poi.longitude)
+                });
+
+                console.log(poi.latitude, poi.longitude);
+
+                var iconBase = "https://developers.google.com/maps/documentation/javascript/examples/full/images/info-i_maps.png";
+
+                var bounds = circle.getBounds();
+                const overlay = new USGSOverlay(bounds, iconBase);
+                overlay.setMap(map);
+            }
+
+
         })();
 
     </script>

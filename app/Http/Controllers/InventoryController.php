@@ -12,6 +12,7 @@ use App\Models\Inventory_report;
 use App\Models\Inventory_detail;
 use App\Models\Inventory;
 use App\Models\Accounting;
+use App\Models\Category;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -22,10 +23,8 @@ class InventoryController extends Controller
     public function showFormCreatGroup(){
         $active = 'decision';
         $users = User::select('id','full_name')->get();
-        $venues = Venue::select('id','name')
-                ->where('type','venue')
-                ->orderBy('name', 'asc')->get();
-
+        $venues = Venue::select('id','venue_name')
+                ->orderBy('venue_name', 'asc')->get();
         return view('decision',['users'=> $users, 'venues' => $venues, 'active_create' => true, 'active' =>  $active]);
     }
 
@@ -243,11 +242,14 @@ class InventoryController extends Controller
             }
         }
 
+        $categories = Category::all();
+
         $status = config('define.status');
 
         return view('active',['inventory'=>$inventory,
             'devices'=>$devices,
             'active' =>  'inven',
+            'cate' =>  $categories,
             'status'=>$status]);
     }
 }

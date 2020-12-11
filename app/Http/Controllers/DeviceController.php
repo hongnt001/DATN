@@ -52,6 +52,7 @@ class DeviceController extends Controller
             $device->number_device = $request->number;
             $device->manufacturer_address = $request->manu;
             $device->status = $request->status;
+            $device->room_number = $request->room;
             $device->type_ts = $request->type_ts;
             $device->year_use_start = $request->year_use;
             $device->use_percent = $request->per;
@@ -59,6 +60,8 @@ class DeviceController extends Controller
             $device->present_price = $request->price_now;
             $device->notes = $request->note;
             $device->locate_id = '1';
+            $device->latitude = $request->lat;
+            $device->longitude = $request->long;
             $device->image = $request->hasFile('image_device')?'uploads/logos/'. $filename:'';
 
             $saved = $device->save();

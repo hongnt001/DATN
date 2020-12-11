@@ -278,7 +278,7 @@
                                     class="block appearance-none w-full bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                     name="locations[]" multiple="multiple" id="locations" required>
                                     @foreach($venues as $venue)
-                                        <option value="{{$venue->id}}">{{$venue->name}}</option>
+                                        <option value="{{$venue->id}}">{{$venue->venue_name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -330,8 +330,6 @@
                 </div>
         </div>
 
-        </div>
-        </div>
         @include('sidebar.footer')
     </main>
 @stop

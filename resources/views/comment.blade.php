@@ -97,10 +97,10 @@
                         <tbody class="bg-white divide-y ">
                         @foreach($devices as $key=> $device)
                                 <tr class="text-gray-700 text-xs ">
-                                    <td class="px-1 py-3 text-center">{{$key+1}}</td>
+                                    <td class="px-1 py-3 text-center">{{$key +1}}</td>
                                     <td class="px-2 py-3 text-center">{{$device->name}}</td>
                                     <td class="px-2 py-3 text-center">{{$device->code}}</td>
-                                    <td class="px-2 py-3 text-center">{{$device->model}}</td>
+                                    <td class="px-2 py-3 text-center">{{$device->model_number}}</td>
                                     <td class="px-2 py-3 text-center">{{$device->locate.' - Phòng '.$device->room_number}}</td>
                                     <td class="px-2 py-3 text-center">{{$device->acc_number_device}}</td>
                                     <td class="px-2 py-3 text-center">{{number_format($device->acc_original_price, 0, ',', ',')}}</td>
@@ -148,9 +148,7 @@
                             </label>
                             <textarea
                                 class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                name="comment" rows="2" required>
-                            {{$inventory->comment}}
-                        </textarea>
+                                name="comment" rows="2" required>{{$inventory->comment}}</textarea>
                         </div>
                         <div class="w-1/2 px-3">
                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -159,9 +157,7 @@
                             </label>
                             <textarea
                                 class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                name="note" rows="2" required>
-                            {{$inventory->note}}
-                        </textarea>
+                                name="note" rows="2" required>{{$inventory->note}}</textarea>
                         </div>
                     </div>
                     <div class="block flex">

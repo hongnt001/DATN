@@ -13,6 +13,10 @@ class Devices extends Model
     {
         return $this->hasOne('App\Models\Accounting',  'id_device','id');
     }
+    public function category()
+    {
+        return $this->hasOne('App\Models\Category',  'id','category_id');
+    }
 
 
 }

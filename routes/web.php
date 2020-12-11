@@ -23,8 +23,11 @@ Route::get('/logout', [ 'uses' => 'App\Http\Controllers\LoginController@getLogou
 
 
 Route::group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers'], function() {
+
     Route::get('/home',  [ 'uses' => 'HomeController@toHome'])->name('home');
     Route::get('/home/device',  [ 'uses' => 'HomeController@getListDevices'])->name('home_devices');
+    Route::get('/home/devicetype',  [ 'uses' => 'HomeController@getDeviceType'])->name('type');
+    Route::get('/home/status',  [ 'uses' => 'HomeController@getStatus'])->name('status');
 
     Route::get('/user/create', 'UserController@showRegistrationForm')->name('add_user');
     Route::post('/user/create', 'UserController@create')->name('create_user');
