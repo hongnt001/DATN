@@ -10,10 +10,8 @@
         <div id="map"> </div>
         <div class="container px-6 mx-auto grid mb-12">
             <h2 class="my-4 text-2xl font-semibold text-gray-700 ">
-                Danh sách kiểm kê
+                Đánh giá tổng kết kiểm kê
             </h2>
-            <div class="px-6 my-6 flex button">
-            </div>
             <!-- New Table -->
             <div class="w-full overflow-hidden rounded-lg shadow-xs">
                 <div class="w-full overflow-x-auto">

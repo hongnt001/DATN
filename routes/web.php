@@ -23,6 +23,7 @@ Route::get('/logout', [ 'uses' => 'App\Http\Controllers\LoginController@getLogou
 
 
 Route::group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers'], function() {
+    Route::get('/', function () {return 'Hello';});
 
     Route::get('/home',  [ 'uses' => 'HomeController@toHome'])->name('home');
     Route::get('/home/device',  [ 'uses' => 'HomeController@getListDevices'])->name('home_devices');
@@ -45,7 +46,7 @@ Route::group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers'], fu
 
 
     Route::get('/inventory/list', 'InventoryController@getList')->name('get_list_inven');
-    Route::get('/inventory/active/{id_inventory}', 'InventoryController@invenActive')->name('active');
+    Route::get('/inventory/active/{id_inventory}/{floor?}', 'InventoryController@invenActive')->name('active');
 
 
     Route::post('/inventory/active/calculating/detail/{id_inventory}/{id_device}', 'ActiveController@inventoryDetail')->name('create_inven_detail');

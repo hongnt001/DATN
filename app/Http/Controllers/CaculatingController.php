@@ -22,7 +22,7 @@ class CaculatingController extends Controller
             $array_locate = [];
             foreach ($inventory->locate as $id_venue) {
                 $venue = Venue::where('id', $id_venue)->first();
-                array_push($array_locate, $venue->name);
+                array_push($array_locate, $venue->venue_name);
             }
             $inventory->locate = $array_locate;
 

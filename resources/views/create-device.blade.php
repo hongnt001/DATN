@@ -443,8 +443,8 @@
                     return url;
                 },
                 tileSize: new google.maps.Size(TILE_SIZE, TILE_SIZE),
-                minZoom: 1,
-                maxZoom: 21
+                minZoom: 17,
+                maxZoom: 25
             });
 
             map.mapTypes.set(TILE_LAYER_ID, layerTiles);
@@ -460,33 +460,6 @@
 
             const overlay = new USGSOverlay(bounds, srcImage);
             overlay.setMap(map);
-
-            //Button Floor
-            function CenterControl(controlDiv, map) {
-                // Set CSS for the control border.
-                const controlUI = document.createElement("div");
-                controlUI.style.backgroundColor = "#000000";
-                controlUI.style.border = "2px solid #fff";
-                controlUI.style.borderRadius = "3px";
-                controlUI.style.boxShadow = "0 2px 6px rgba(0,0,0,.3)";
-                controlUI.style.cursor = "pointer";
-                controlUI.style.marginBottom = "22px";
-                controlUI.style.textAlign = "center";
-                controlUI.title = "Click to recenter the map";
-                controlDiv.appendChild(controlUI);
-                // Set CSS for the control interior.
-                const controlText = document.createElement("div");
-                controlText.style.color = "rgb(25,25,25)";
-                controlText.style.fontFamily = "Roboto,Arial,sans-serif";
-                controlText.style.fontSize = "16px";
-                controlText.style.lineHeight = "38px";
-                controlText.style.paddingLeft = "5px";
-                controlText.style.paddingRight = "5px";
-                controlText.innerHTML = "Change Floor";
-                controlUI.appendChild(controlText);
-                // Setup the click event listeners: simply set the map to Chicago.
-                controlUI.addEventListener("click", changeFloor);
-            }
 
             const myLatlng = { lat: 38.44878983, lng: -122.74372341 };
 
@@ -514,22 +487,6 @@
 
             });
 
-
-
-            //add Button Floor
-            const centerControlDiv = document.createElement("div");
-            CenterControl(centerControlDiv, map);
-            map.controls[google.maps.ControlPosition.TOP_CENTER].push(
-                centerControlDiv
-            );
-
-            function changeFloor() {
-                if (srcImage = "/uploads/floor_demo1.svg") {
-                    srcImage = "/uploads/floor_demo2.svg"
-                } else if (srcImage = "/uploads/floor_demo2.svg") {
-                    srcImage = "/uploads/floor_demo1.svg"
-                }
-            }
         })();
     </script>
     @endpush

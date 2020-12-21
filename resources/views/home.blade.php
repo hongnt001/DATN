@@ -13,15 +13,15 @@
                 Thống kê thiết bị
             </h2>
             <div class="flex">
-                <div class="w-1/2 mx-auto" id="piechart1" style="width: 700px; height: 500px;"></div>
-                <div class="w-1/2 mx-auto" id="piechart2" style="width: 500px; height: 500px;"></div>
+                <div class="w-1/2 mx-auto" id="piechart1" style="width: 600px; height: 450px;"></div>
+                <div class="w-1/2 mx-auto" id="piechart2" style="width: 500px; height: 450px;"></div>
             </div>
 
             <div class=" mb-6 flex button">
                 <a href="{{route('add_device')}}"
                     class="items-center justify-end w-auto px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
                 >
-                    Thêm mới
+                    Thêm mới thiết bị
                     <span class="ml-2" aria-hidden="true">+</span>
                 </a>
 

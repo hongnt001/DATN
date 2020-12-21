@@ -3,19 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="9984c6ff-18ee-49f9-86f3-b8902a2c9f44" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ActiveController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ActiveController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CaculatingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CaculatingController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DeviceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DeviceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InventoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InventoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Devices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Devices.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Venue.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Venue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Auth/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/active.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/active.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/comment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/comment.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/create-device.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/create-device.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/decision.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/decision.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rate.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,22 +167,22 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dsd_20201" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/uploads/image_device" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\DATN\resources\views\layout" />
-      <recent name="C:\xampp\htdocs\DATN\public\assets\js" />
-      <recent name="C:\xampp\htdocs\DATN\public\assets\css" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\DATN\public\uploads\image_device" />
       <recent name="C:\xampp\htdocs\DATN\resources\views\user" />
       <recent name="C:\xampp\htdocs\DATN\resources\views" />
       <recent name="C:\xampp\htdocs\DATN\app\Models" />
       <recent name="C:\xampp\htdocs\DATN\public\assets\js" />
-      <recent name="C:\xampp\htdocs\DATN\resources\views\Auth" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\DATN\resources\views\layout" />
+      <recent name="C:\xampp\htdocs\DATN\public\assets\js" />
+      <recent name="C:\xampp\htdocs\DATN\public\assets\css" />
     </key>
   </component>
   <component name="RunManager">
@@ -268,7 +264,11 @@
       <workItem from="1606657909110" duration="660000" />
       <workItem from="1606701753657" duration="15534000" />
       <workItem from="1606828869866" duration="15000" />
-      <workItem from="1607657936625" duration="12677000" />
+      <workItem from="1607657936625" duration="12798000" />
+      <workItem from="1607771173821" duration="131000" />
+      <workItem from="1608103457119" duration="12788000" />
+      <workItem from="1608170865169" duration="10667000" />
+      <workItem from="1608556812536" duration="993000" />
     </task>
     <servers />
   </component>
@@ -288,10 +288,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1605350624675" />
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1607677061378">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1607771303198">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1607677061378" />
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1607771303198" />
     <state x="379" y="101" width="607" height="526" key="find.popup" timestamp="1605330889284">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -304,5 +304,21 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1605263283420" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/active.blade.php</url>
+          <line>175</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/active.blade.php</url>
+          <line>207</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

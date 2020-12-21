@@ -62,7 +62,7 @@ class DeviceController extends Controller
             $device->locate_id = '1';
             $device->latitude = $request->lat;
             $device->longitude = $request->long;
-            $device->image = $request->hasFile('image_device')?'uploads/logos/'. $filename:'';
+            $device->image = $request->hasFile('image_device')?'uploads/image_device/'. $filename:'';
 
             $saved = $device->save();
 
@@ -89,18 +89,18 @@ class DeviceController extends Controller
     public function schedule(){
         $device_lose = Devices::where('status','=','Mất')->get();
         foreach($device_lose as $k => &$v) {
-            $v->locate = Venue::where('id',$v->locate_id)->first()->name;
+            $v->locate = Venue::where('id',$v->locate_id)->first()->venue_name;
 //            $v->updated_at = Carbon::createFromFormat('Y-m-d H:i:s',$v->updated_at)->format('d/m/Y');
         }
 
         $device_fix = Devices::where('status','=','Cần sửa chữa')->get();
         foreach($device_fix as $k => &$v) {
-            $v->locate = Venue::where('id',$v->locate_id)->first()->name;
+            $v->locate = Venue::where('id',$v->locate_id)->first()->venue_name;
         }
 
         $device_tt = Devices::where('status','=','Cần thay thế')->get();
         foreach($device_tt as $k => &$v) {
-            $v->locate = Venue::where('id',$v->locate_id)->first()->name;
+            $v->locate = Venue::where('id',$v->locate_id)->first()->venue_name;
         }
 
         return view('schedule', [

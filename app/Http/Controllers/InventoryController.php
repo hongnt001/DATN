@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Venue;
+use App\Models\Location;
 use App\Models\Devices;
 use App\Models\Inventory_group;
 use App\Models\Inventory_report;
@@ -156,7 +157,7 @@ class InventoryController extends Controller
             $array_locate = [];
             foreach ($inventory->locate as $id_venue){
                 $venue = Venue::where('id', $id_venue)->first();
-                array_push($array_locate, $venue->name);
+                array_push($array_locate, $venue->venue_name);
             }
             $inventory->locate = $array_locate;
 
@@ -185,7 +186,6 @@ class InventoryController extends Controller
        $id = $request->id_inventory;
        $inventory = Inventory::where('id',$id)->first();
 
-
         $inventory->name = $inventory->user->full_name;
         $inventory->locate = array_map(function($id){
             return (int)$id;
@@ -196,9 +196,11 @@ class InventoryController extends Controller
         $array_locate = [];
         foreach ($inventory->locate as $id_venue){
             $venue = Venue::where('id', $id_venue)->first();
-            array_push($array_locate, $venue->name);
+            $floors = Location::where('venue_id', $id_venue)->get();
+            array_push($array_locate, $venue->venue_name);
         }
         $inventory->locate = $array_locate;
+
 
         $group = $inventory->group;
         $array_mem = [];
@@ -246,10 +248,12 @@ class InventoryController extends Controller
 
         $status = config('define.status');
 
+
         return view('active',['inventory'=>$inventory,
             'devices'=>$devices,
             'active' =>  'inven',
             'cate' =>  $categories,
+            'floors' =>  $floors,
             'status'=>$status]);
     }
 }

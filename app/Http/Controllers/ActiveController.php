@@ -47,7 +47,7 @@ class ActiveController extends Controller
         $array_locate = [];
         foreach ($inventory->locate as $id_venue){
             $venue = Venue::where('id', $id_venue)->first();
-            array_push($array_locate, $venue->name);
+            array_push($array_locate, $venue->venue_name);
         }
         $inventory->locate = $array_locate;
 
@@ -83,7 +83,7 @@ class ActiveController extends Controller
         $total_cl_present_price = 0;
             foreach ($devices as $key =>&$device){
                 $devices->stt = $key + 1;
-                $device->locate = Venue::where('id',$device->locate_id)->first()->name;
+                $device->locate = Venue::where('id',$device->locate_id)->first()->venue_name;
 
                 $acc = Accounting::where('id_device',$device->id)->first();
                 $device->acc_number_device = $acc->number_device;

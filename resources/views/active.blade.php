@@ -12,15 +12,34 @@
         .l-col {
             width: 150px;
         }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
     </style>
     @include('sidebar.header')
 
     <main class="h-full">
         <div id="map"></div>
         <div class="container px-6 mx-auto grid">
-            <h2 class="my-4 text-2xl font-semibold text-gray-700 ">
-                Kiểm kê
-            </h2>
+            <div class="flex w-full">
+                <h2 class="w-1/2 my-4 text-2xl font-semibold text-gray-700 ">
+                    Kiểm kê
+                </h2>
+                <div class="flex p-10 w-1/2 justify-end">
+                    <div class="dropdown inline-block relative">
+                        <button class="bg-purple-600 text-white border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 font-semibold py-2 px-4 inline-flex items-center">
+                            <span class="mr-1">Chuyển tầng Maps</span>
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+                        </button>
+                        <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
+                            <li class=""><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">One</a></li>
+                            <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Two</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
             <div class="">
                 <div class="flex">
                     <div class="w-1/3 px-4 py-2 m-2 font-bold">
@@ -96,7 +115,7 @@
                                 {{ csrf_field() }}
                         <tr class="text-gray-700 ">
                             <td class="px-4 py-3 text-center">{{$key+1}}</td>
-                            <td class="px-4 py-3 text-center">{{$device->name}}</td>
+                            <td class="px-4 py-3 text-center cursor-pointer" onclick="displayDevice({{$device}})">{{$device->name}}</td>
                             <td class="px-4 py-3 text-center" >{{$device->acc_number_device}}</td>
                             <td class="px-4 py-3 text-center" >
                                 {{number_format($device->acc_original_price, 0, ',', ',')}}</td>
@@ -263,7 +282,7 @@
 
     <script src="{{ asset('assets/js/mapcir/js/mapcir.js') }}"></script>
     <script>
-        (function() {
+        // (function() {
             // The custom USGSOverlay object contains the USGS image,
             // the bounds of the image, and a reference to the map.
             class USGSOverlay extends google.maps.OverlayView {
@@ -344,57 +363,8 @@
 
             let map = new google.maps.Map(document.getElementById('map'), {
                 center: center,
-                zoom: 19
+                zoom: 20
             });
-
-            ////////////////////////////////////////////////////////////////////////////
-            {{--var cate =  {!! json_encode($cate) !!};--}}
-            {{--console.log(cate[1]['id']);--}}
-            // const iconBase = "https://developers.google.com/maps/documentation/javascript/examples/full/images/info-i_maps.png";
-            // var icons = {
-            //     2: {
-            //         icon: iconBase + "info-i_maps.png",
-            //     },
-            //     3: {
-            //         icon: iconBase + "info-i_maps.png",
-            //     },
-            //     6: {
-            //         icon: iconBase + "info-i_maps.png",
-            //     },
-            //     8: {
-            //         icon: iconBase + "info-i_maps.png",
-            //     },
-            // };
-            //
-            // const features = [
-            //     {
-            //         position: new google.maps.LatLng(38.448281716122, -122.74389149662),
-            //         type: "2",
-            //     },
-            //     {
-            //         position: new google.maps.LatLng(38.448324838679, -122.74372171472),
-            //         type: "2",
-            //     },
-            //     {
-            //         position: new google.maps.LatLng(38.44824790916539, -122.74380288337676),
-            //         type: "2",
-            //     },
-            //     {
-            //         position: new google.maps.LatLng(38.448288588558, -122.74369349126),
-            //         type: "2",
-            //     },
-            //
-            // ];
-            //
-            // // Create markers.
-            // for (let i = 0; i < features.length; i++) {
-            //     const marker = new google.maps.Marker({
-            //         position: features[i].position,
-            //         icon: icons[features[i].type].icon,
-            //         map: map,
-            //     });
-            // }
-
 
             // load map tiles
             const TILE_URL = 'http://maptile.mapcir.com/lyrs=p&x={x}&y={y}&z={z}';
@@ -410,8 +380,8 @@
                     return url;
                 },
                 tileSize: new google.maps.Size(TILE_SIZE, TILE_SIZE),
-                minZoom: 1,
-                maxZoom: 21
+                minZoom: 17,
+                maxZoom: 25
             });
 
             map.mapTypes.set(TILE_LAYER_ID, layerTiles);
@@ -428,54 +398,11 @@
             const overlay = new USGSOverlay(bounds, srcImage);
             overlay.setMap(map);
 
-            //Button Floor
-            function CenterControl(controlDiv, map) {
-                // Set CSS for the control border.
-                const controlUI = document.createElement("div");
-                controlUI.style.backgroundColor = "#000000";
-                controlUI.style.border = "2px solid #fff";
-                controlUI.style.borderRadius = "3px";
-                controlUI.style.boxShadow = "0 2px 6px rgba(0,0,0,.3)";
-                controlUI.style.cursor = "pointer";
-                controlUI.style.marginBottom = "22px";
-                controlUI.style.textAlign = "center";
-                controlUI.title = "Click to recenter the map";
-                controlDiv.appendChild(controlUI);
-                // Set CSS for the control interior.
-                const controlText = document.createElement("div");
-                controlText.style.color = "rgb(25,25,25)";
-                controlText.style.fontFamily = "Roboto,Arial,sans-serif";
-                controlText.style.fontSize = "16px";
-                controlText.style.lineHeight = "38px";
-                controlText.style.paddingLeft = "5px";
-                controlText.style.paddingRight = "5px";
-                controlText.innerHTML = "Change Floor";
-                controlUI.appendChild(controlText);
-                // Setup the click event listeners: simply set the map to Chicago.
-                controlUI.addEventListener("click", changeFloor);
-            }
-
-
-            //add Button Floor
-            const centerControlDiv = document.createElement("div");
-            CenterControl(centerControlDiv, map);
-            map.controls[google.maps.ControlPosition.TOP_CENTER].push(
-                centerControlDiv
-            );
-
-            function changeFloor() {
-                if (srcImage = "/uploads/floor_demo1.svg") {
-                    srcImage = "/uploads/floor_demo2.svg"
-                } else if (srcImage = "/uploads/floor_demo2.svg") {
-                    srcImage = "/uploads/floor_demo1.svg"
-                }
-            }
 
             var devices =  {!! json_encode($devices) !!};
-            for( var i=0; i<devices.length; i++) {
+            for( var i=0; i< devices.length; i++) {
                 var device = devices[i];
                 drawPoi(device, map);
-
             }
 
             function drawPoi(poi, map) {
@@ -483,21 +410,95 @@
                 var scale = 1128.497220 *  0.00067 * (21 > zoom ? zoom/21 : 21/zoom);
 
                 var circle = new google.maps.Circle({
-                    radius: 2*scale,
-                    center: new google.maps.LatLng(poi.latitude, poi.longitude)
+                    radius: 1.5*scale,
+                    center: new google.maps.LatLng(poi.latitude, poi.longitude),
+                    clickable: true,
+                    strokeOpacity: 0,
+                    fillOpacity: 0
                 });
 
-                console.log(poi.latitude, poi.longitude);
+                var url_image = '/' + poi.image;
+                if(poi.image == ''){
+                    url_image = url_image + 'uploads/image_device/default.jpg';
+                }
 
-                var iconBase = "https://developers.google.com/maps/documentation/javascript/examples/full/images/info-i_maps.png";
+                var contentString =
+                    '<div id="content">' +
+                    '<div id="siteNotice">' +
+                    "</div>" +
+                    '<img class="max-w-lg" style="width:350px;height:200px;" src="'+url_image+'" alt="image device" />'+
+                    '<h1 id="firstHeading" class="font-bold text-lg">'+poi.name+'</h1>' +
+                    '<div id="bodyContent">' +
+                    '<p><b>Nhãn hiệu: </b>'+poi.brand_name+'</p>'+
+                    '<p><b>Model: </b>'+poi.model_number+'</p>'+
+                    '<p><b>Seri: </b>'+poi.serial_number+'</p>'+
+                    "</p>" +
+                    "</div>" +
+                    "</div>";
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString,
+                    maxWidth: 500,
+                });
+
+                google.maps.event.addListener(circle, 'click', function(ev) {
+                    infowindow.setPosition(ev.latLng);
+                    infowindow.open(map);
+                });
+
+                var devicetype = {!! json_encode($cate) !!};
+
+                var url_icon = '3063/3063668.svg';
+                for( var i = 0; i < devicetype.length; i++){
+                    if(poi.category_id == devicetype[i].id){
+                        url_icon = devicetype[i].icon;
+                        break;
+                    }
+                }
+
+                var iconBase = 'https://www.flaticon.com/svg/static/icons/svg/' + url_icon;
 
                 var bounds = circle.getBounds();
                 const overlay = new USGSOverlay(bounds, iconBase);
                 overlay.setMap(map);
+                circle.setMap(map);
             }
 
+            function displayDevice(device){
+                var latlg = new google.maps.LatLng(device.latitude, device.longitude);
+                var url_image = '/' + device.image;
+                if(device.image == ''){
+                    url_image = url_image + 'uploads/image_device/default.jpg';
+                }
 
-        })();
+                var contentString =
+                    '<div id="content">' +
+                    '<div id="siteNotice">' +
+                    "</div>" +
+                    '<img class="max-w-lg" style="width:350px;height:200px;" src="'+url_image+'" alt="image device" />'+
+                    '<h1 id="firstHeading" class="font-bold text-lg">'+device.name+'</h1>' +
+                    '<div id="bodyContent">' +
+                    '<p><b>Nhãn hiệu: </b>'+device.brand_name+'</p>'+
+                    '<p><b>Model: </b>'+device.model_number+'</p>'+
+                    '<p><b>Seri: </b>'+device.serial_number+'</p>'+
+                    "</p>" +
+                    "</div>" +
+                    "</div>";
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString,
+                    maxWidth: 500,
+                    position: latlg,
+                });
+                window.scroll({
+                    top: 0,
+                    left: 0,
+                });
+                infowindow.open(map);
+
+            }
+
+        // })();
 
     </script>
 
